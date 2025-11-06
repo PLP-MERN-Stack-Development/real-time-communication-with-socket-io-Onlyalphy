@@ -1,77 +1,103 @@
-# Real-Time Chat Application with Socket.io
+🚀 Real-Time Chat Application
+This project is a real-time chat application built for the Week 5 assignment of the PLP Full-Stack MERN Development course. It demonstrates bidirectional communication between a Node.js server and a React client using Socket.io.
 
-This assignment focuses on building a real-time chat application using Socket.io, implementing bidirectional communication between clients and server.
+Overview
+The application allows multiple users to join a global chat room by providing a username. Once connected, they can send and receive messages in real-time. The application also shows a live list of all currently online users and notifies the chat when a user joins or leaves.
 
-## Assignment Overview
+Built With
+Backend: Node.js, Express, Socket.io
 
-You will build a chat application with the following features:
-1. Real-time messaging using Socket.io
-2. User authentication and presence
-3. Multiple chat rooms or private messaging
-4. Real-time notifications
-5. Advanced features like typing indicators and read receipts
+Frontend: React, Socket.io-client
 
-## Project Structure
+Dev: Vite (for the React frontend)
 
-```
-socketio-chat/
-├── client/                 # React front-end
-│   ├── public/             # Static files
-│   ├── src/                # React source code
-│   │   ├── components/     # UI components
-│   │   ├── context/        # React context providers
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── pages/          # Page components
-│   │   ├── socket/         # Socket.io client setup
-│   │   └── App.jsx         # Main application component
-│   └── package.json        # Client dependencies
-├── server/                 # Node.js back-end
-│   ├── config/             # Configuration files
-│   ├── controllers/        # Socket event handlers
-│   ├── models/             # Data models
-│   ├── socket/             # Socket.io server setup
-│   ├── utils/              # Utility functions
-│   ├── server.js           # Main server file
-│   └── package.json        # Server dependencies
-└── README.md               # Project documentation
-```
+✨ Features Implemented
+Simple "Authentication": Users join the chat by providing a username.
 
-## Getting Started
+Global Chat Room: All connected users can send and receive messages in a single, shared chat room.
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week5-Assignment.md` file
-4. Complete the tasks outlined in the assignment
+Real-Time Messaging: Messages appear instantly for all users without needing to refresh the page.
 
-## Files Included
+Online User List: A sidebar shows a live list of all users currently connected to the chat.
 
-- `Week5-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Socket.io configuration templates
-  - Sample components for the chat interface
+Connection Status: The UI displays a "Connected" or "Disconnected" status indicator.
 
-## Requirements
+System Messages: The chat window displays a system message when a user "joins the chat" or "left the chat."
 
-- Node.js (v18 or higher)
-- npm or yarn
-- Modern web browser
-- Basic understanding of React and Express
+"User is Typing" Indicator: When a user types in the message box, a notification appears for all other users (e.g., "Míhozi is typing...").
 
-## Submission
+Stable Connection: Implements useCallback on the client to prevent re-render loops and maintain a stable WebSocket connection.
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+📸 Screenshots
+Note: Replace the placeholder text below with your own screenshots.
 
-1. Complete both the client and server portions of the application
-2. Implement the core chat functionality
-3. Add at least 3 advanced features
-4. Document your setup process and features in the README.md
-5. Include screenshots or GIFs of your working application
-6. Optional: Deploy your application and add the URLs to your README.md
+How to add screenshots:
 
-## Resources
+Take a screenshot of your application.
 
-- [Socket.io Documentation](https://socket.io/docs/v4/)
-- [React Documentation](https://react.dev/)
-- [Express.js Documentation](https://expressjs.com/)
-- [Building a Chat Application with Socket.io](https://socket.io/get-started/chat) 
+Drag and drop the image file directly into the GitHub text editor for this README.md file. It will automatically upload it and give you a link.
+
+1. Login Screen
+This is the first screen the user sees to enter their name.
+
+2. Main Chat Interface
+Shows the online user list, chat messages (from you and others), and system messages.
+
+3. "User is Typing" Indicator
+Shows the app when another user is actively typing a message.
+
+🛠️ Setup and Installation
+Follow these instructions to get a local copy of the project up and running.
+
+Prerequisites
+Node.js (v18+ recommended)
+
+npm (comes with Node.js)
+
+1. Clone the Repository
+Bash
+
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+cd YOUR_REPO_NAME
+2. Backend (Server) Setup
+Navigate to the server directory:
+
+Bash
+
+cd server
+Install the required npm packages:
+
+Bash
+
+npm install
+Start the backend server:
+
+Bash
+
+npm run dev
+The server will start on http://localhost:5000.
+
+3. Frontend (Client) Setup
+Open a new terminal and navigate to the client directory:
+
+Bash
+
+cd client
+Install the required npm packages:
+
+Bash
+
+npm install
+Start the frontend development server:
+
+Bash
+
+npm run dev
+The application will automatically open in your browser at http://localhost:5174.
+
+4. Run the Application
+Open two (or more) browser tabs or incognito windows to http://localhost:5174.
+
+Enter a different username in each tab.
+
+You can now chat between the two (or more) users!

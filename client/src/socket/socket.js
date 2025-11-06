@@ -1,7 +1,7 @@
 // socket.js - Socket.io client setup
 
 import { io } from 'socket.io-client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 // Socket.io connection URL
 const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000';
@@ -23,32 +23,32 @@ export const useSocket = () => {
   const [typingUsers, setTypingUsers] = useState([]);
 
   // Connect to socket server
-  const connect = (username) => {
+  const connect = useCallback((username) => {
     socket.connect();
     if (username) {
       socket.emit('user_join', username);
     }
-  };
+  }, []);
 
   // Disconnect from socket server
-  const disconnect = () => {
+  const disconnect = useCallback(() => {
     socket.disconnect();
-  };
+  }, []);
 
   // Send a message
-  const sendMessage = (message) => {
+  const sendMessage = useCallback((message) => {
     socket.emit('send_message', { message });
-  };
+  }, []);
 
   // Send a private message
-  const sendPrivateMessage = (to, message) => {
+  const sendPrivateMessage = useCallback((to, message) => {
     socket.emit('private_message', { to, message });
-  };
+  }, []);
 
   // Set typing status
-  const setTyping = (isTyping) => {
+  const setTyping = useCallback((isTyping) => {
     socket.emit('typing', isTyping);
-  };
+  }, []);
 
   // Socket event listeners
   useEffect(() => {
@@ -146,4 +146,4 @@ export const useSocket = () => {
   };
 };
 
-export default socket; 
+export default socket;
