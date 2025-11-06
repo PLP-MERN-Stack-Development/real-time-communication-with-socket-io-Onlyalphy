@@ -29,22 +29,17 @@ System Messages: The chat window displays a system message when a user "joins th
 Stable Connection: Implements useCallback on the client to prevent re-render loops and maintain a stable WebSocket connection.
 
 📸 Screenshots
-Note: Replace the placeholder text below with your own screenshots.
-
-How to add screenshots:
-
-Take a screenshot of your application.
-
-Drag and drop the image file directly into the GitHub text editor for this README.md file. It will automatically upload it and give you a link.
-
 1. Login Screen
 This is the first screen the user sees to enter their name.
+<img width="1920" height="1032" alt="loginpage" src="https://github.com/user-attachments/assets/ed937557-523a-46f1-b0ff-4936211481ed" />
 
 2. Main Chat Interface
 Shows the online user list, chat messages (from you and others), and system messages.
+<img width="1920" height="1032" alt="chatapp" src="https://github.com/user-attachments/assets/99e2b9b6-ac90-4dbc-a2cb-0240aa8bb4e0" />
 
 3. "User is Typing" Indicator
 Shows the app when another user is actively typing a message.
+<img width="960" height="1032" alt="chatapp2" src="https://github.com/user-attachments/assets/5cf6ec82-1d83-49a9-918d-0e7f594f4c6e" />
 
 🛠️ Setup and Installation
 Follow these instructions to get a local copy of the project up and running.
